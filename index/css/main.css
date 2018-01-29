@@ -82,6 +82,16 @@ header{
 	height: 40px;
 	line-height: 40px;
 	margin: 10px 0;
+	position: relative;
+}
+.spanNormal{
+	background: url(../image/blank.png) no-repeat;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	position: absolute;
+	right: 27px;
+	top: 11px;
 }
 #logRegDiv form .rowDiv .userSetting{
 	float: left;
@@ -113,6 +123,22 @@ header{
 	border-radius: 15px;
 	font-size: 16px;
 	margin-left: 150px;
+}
+.checkBtn{
+	margin-top: 5px;
+}
+.tipDiv{
+	width: 150px;
+	height: 30px;
+	margin: 0 auto;
+	padding-left: 40px;
+	background: url(../image/blank.png) no-repeat; 
+}
+.tipDivWrong{
+	background: url(../image/unok.png) no-repeat; 
+}
+.tipDivTrue{
+	background: url(../image/ok.png) no-repeat;
 }
 /*header部分*/
 .container .logoContent img{
@@ -186,6 +212,7 @@ header{
 	padding-left: 15px;
 	background: url(../image/userCheck.png) no-repeat left center;
 }
+
 /*公共点击输入框*/
 .formFocus{
 	border: 1px solid #472AF5;

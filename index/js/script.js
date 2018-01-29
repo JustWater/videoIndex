@@ -74,7 +74,7 @@ function showLogin(obj) {
 			'<div class="userMaskDiv">' +
 			'<h3>账号登录</h3>' +
 			'<b id = "closeLogin"></b>' +
-			'<form>' +
+			'<form onsubmit="return check()">' +
 			'<div class ="rowDiv">' +
 			'<div class="userSetting">用户名：</div>' +
 			'<div>' +
@@ -135,7 +135,8 @@ function showLogin(obj) {
 			'</div>' +
 			'</div>' +
 			'<input type="submit" value="注册" id="registerIn" class="userBtn" />' +
-			'</form>'
+			'</form>'+
+			'</div>';
 			logRegDiv.appendChild(registerMaskDiv);
 			var closeBtn = ById("closeRegister");
 			oEvent.addEventHanlder(closeBtn, 'click', function(i) {
@@ -153,10 +154,6 @@ function showLogin(obj) {
 	//点击注册
 
 	// 注册验证
-	// var data = [{
-	// 	"username": "Just",
-	// 	"password": "123456"
-	// }];
 	if (ById("registerMaskDiv") !== undefined && obj.id == "register") {
 		var regUser = ById("regUser");
 		var regPwd = ById("regPwd");
@@ -180,43 +177,37 @@ function showLogin(obj) {
 		var logUser = ById("logUser");
 		var logPwd = ById("logPwd");
 		// oEvent.addEventHanlder(checkIn, 'click', function() {
-		// 	var logUserVal = logUser.value;
-		// 	var logPwdVal = logPwd.value;
-		// 	if (logUserVal != data[0].username) {
-		// 		// alert("用户名错误");
-		// 		console.log(2)
-		// 	} else if (logPwdVal != data[0].password) {
-		// 		alert("密码错误")
-		// 	} else {
-		// 		changeLRBtn(data, obj);
-		// 		ById("loginMaskDiv").parentNode.removeChild(ById("loginMaskDiv"));
-		// 		flagA = false;
-
-		// 	}
+		// 	var url = "http://zmhwater.vicp.io/videousers/1";
+		// 	var data1 = '{"accountnumber":"'+logUser.value+'","password":"'+logPwd.value+'"}';
+		// 	$.ajax({
+		// 		url:url,
+		// 		type:'POST',
+		// 		data: data1,
+		// 		dataType:"json",
+		// 		contentType:"application/json;charset=UTF-8",
+		// 		success:function(result){
+		// 			changeLRBtn(result, obj);
+		// 			flagA = false;
+		// 			$("#loginMaskDiv").remove();
+		// 		},
+		// 	})
+		// 	// console.log(data1);
+			
+		// // 	// $.ajaxPost(url,data1,function (result){
+		// // 	// 	console.log(result.name);
+		// // 	// 	changeLRBtn(result, obj);
+		// // 	// 	flagA = false;
+		// // 	// 	ById("loginMaskDiv").parentNode.removeChild(ById("loginMaskDiv"));
+				
+		// // 	// })
 
 		// })
-		var aa ;
-		oEvent.addEventHanlder(checkIn, 'click', function() {
-			var data1 = '{"accountnumber":"'+logUser.value+'","password":"'+logPwd.value+'"}';
-			$.ajax({
-				url:"http://zmhwater.vicp.io/videousers/1",
-				type:'POST',
-				data: data1,
-				dataType:"json",
-				contentType:"application/json;charset=UTF-8",
-				success:function(result){
-					console.log(result.name);
-					changeLRBtn(result, obj);
-					flagA = false;
-					ById("loginMaskDiv").parentNode.removeChild(ById("loginMaskDiv"));
-				},
-			})
-
+		oEvent.addEventHanlder(checkIn,'click',function(){
+			oMaskDiv.style.display = "none";
+			$("#loginMaskDiv").remove();
 		})
-		
 	}
 }
-
 function changeLRBtn(result, obj) {
 	oMaskDiv.style.display = "none";
 	var userBehavior = ById("userBehavior");

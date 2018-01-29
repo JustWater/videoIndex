@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div id="logRegDiv"></div>
+	<button id="aa">aa</button>
+	<script type="text/javascript">
+		$("#aa").on('click',function(){
+			var registerMaskDiv = $("<div id='registerMaskDiv'></div>");
+			var registerContent = 
+			'<div class="userMaskDiv">' +
+			'<h3>账号注册</h3>' +
+			'<b id = "closeRegister"></b>' +
+			'<form>' +
+			'<div class ="rowDiv">' +
+			'<div class="userSetting">用户名：</div>' +
+			'<div>' +
+			'<input type="text" placeholder="请输入用户名" id="regUser" class="rightInput"/>' +
+			'<span class="spanNormal"></span>' +
+			'</div>' +
+			'</div>' +
+			'<div class ="rowDiv">' +
+			'<div class="userSetting">密 码：</div>' +
+			'<div>' +
+			'<input type="password" placeholder="请输入密码" id="regPwd" class="rightInput"/>' +
+			'<span class="spanNormal"></span>' +
+			'</div>' +
+			'</div>' +
+			'<div class ="rowDiv">' +
+			'<div class="userSetting" id="regPwdAga">确认密码：</div>' +
+			'<div>' +
+			'<input type="password" placeholder="请再次输入密码" class="rightInput"/>' +
+			'<span class="spanNormal"></span>' +
+			'</div>' +
+			'</div>' +
+			'<input type="button" value="注册" id="registerIn" class="userBtn" />' +
+			'</form>'+
+			'</div>';
+			registerMaskDiv.html(registerContent);
+			$("#logRegDiv").append(registerMaskDiv);
+		})
+		// $(function(){
+			$(document).on('click', '#registerIn', function() {
+				alert(1)
+			})
+			// $("#registerIn").on('click',function(){
+			// 	alert(1)
+			// })
+		// })
+		
+	</script>
+</body>
+</html>
